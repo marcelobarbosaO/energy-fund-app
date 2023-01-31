@@ -5,33 +5,29 @@ import BottomTab from './tabs.route';
 import SignIn from '#screens/SignIn';
 import SplashScreen from '#screens/SplashScreen';
 
-const { Navigator, Screen } = createNativeStackNavigator();
+const { Navigator, Screen } =
+  createNativeStackNavigator<AppStackNavigatorParamList>();
 
 const AppRoutes = () => {
-  const isLoggedIn = false;
-
   return (
     <Navigator screenOptions={{ headerShown: true }} initialRouteName="splash">
-      {isLoggedIn ? (
+      <Screen
+        name="splash"
+        component={SplashScreen}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name="tabs"
+        component={BottomTab}
+        options={{ headerShown: false }}
+      />
+      <>
         <Screen
-          name="tabs"
-          component={BottomTab}
+          name="signin"
+          component={SignIn}
           options={{ headerShown: false }}
         />
-      ) : (
-        <>
-          <Screen
-            name="splash"
-            component={SplashScreen}
-            options={{ headerShown: false }}
-          />
-          <Screen
-            name="signin"
-            component={SignIn}
-            options={{ headerShown: false }}
-          />
-        </>
-      )}
+      </>
     </Navigator>
   );
 };
