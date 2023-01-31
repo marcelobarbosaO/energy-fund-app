@@ -32,6 +32,8 @@ const SignIn = ({ navigation }: PageProps) => {
             labelText="Email"
             placeholder="Your email address"
             value={email}
+            keyboardType="email-address"
+            autoCapitalize="none"
             onChangeText={(email) => setEmail(email)}
           />
 
