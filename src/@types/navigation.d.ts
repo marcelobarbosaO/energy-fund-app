@@ -3,6 +3,7 @@ declare type AppStackNavigatorParamList = {
   tabs: undefined;
   splash: undefined;
   signin: undefined;
+  register: undefined;
 };
 
 declare type PageProps = NativeStackScreenProps<RootStackParamList, 'splash'>;

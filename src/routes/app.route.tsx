@@ -2,32 +2,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import BottomTab from './tabs.route';
 
-import SignIn from '#screens/SignIn';
 import SplashScreen from '#screens/SplashScreen';
+
+import SignIn from '#screens/SignIn';
+import Register from '#screens/Register';
 
 const { Navigator, Screen } =
   createNativeStackNavigator<AppStackNavigatorParamList>();
 
 const AppRoutes = () => {
   return (
-    <Navigator screenOptions={{ headerShown: true }} initialRouteName="splash">
-      <Screen
-        name="splash"
-        component={SplashScreen}
-        options={{ headerShown: false }}
-      />
-      <Screen
-        name="tabs"
-        component={BottomTab}
-        options={{ headerShown: false }}
-      />
-      <>
-        <Screen
-          name="signin"
-          component={SignIn}
-          options={{ headerShown: false }}
-        />
-      </>
+    <Navigator screenOptions={{ headerShown: false }} initialRouteName="splash">
+      <Screen name="splash" component={SplashScreen} />
+      <Screen name="tabs" component={BottomTab} />
+      <Screen name="signin" component={SignIn} />
+      <Screen name="register" component={Register} />
     </Navigator>
   );
 };
