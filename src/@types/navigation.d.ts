@@ -5,15 +5,7 @@ declare type AppStackNavigatorParamList = {
   signin: undefined;
   register: undefined;
   assetDetail: {
-    item: {
-      id: number;
-      name: string;
-      value: string;
-      percent: string;
-      positive: boolean;
-      icon: React.ReactNode;
-      image: React.ReactNode;
-    };
+    item: Fund;
   };
 };
 
