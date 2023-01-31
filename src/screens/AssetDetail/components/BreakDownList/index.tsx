@@ -1,37 +1,118 @@
 import React from 'react';
 
 import { Typography } from '#components';
-import { DiagonalArrow, DiagonalArrowDown } from '#assets/svg';
 
 import * as S from '../../styles';
 
 const cards = [
   [
-    { id: 1, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 2, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 3, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 4, company: 'aaa', title: 'asasasa', image: '' },
+    {
+      id: 1,
+      company: 'AspiraDac',
+      title:
+        'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 2,
+      company: 'climeworks',
+      title:
+        'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 3,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 4,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
   ],
 
   [
-    { id: 5, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 6, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 7, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 8, company: 'aaa', title: 'asasasa', image: '' },
+    {
+      id: 5,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 6,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 7,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 8,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
   ],
 
   [
-    { id: 9, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 10, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 11, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 12, company: 'aaa', title: 'asasasa', image: '' },
+    {
+      id: 9,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 10,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 11,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 12,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
   ],
 
   [
-    { id: 13, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 14, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 15, company: 'aaa', title: 'asasasa', image: '' },
-    { id: 16, company: 'aaa', title: 'asasasa', image: '' },
+    {
+      id: 13,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 14,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 15,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
+    {
+      id: 16,
+      company: 'aaa',
+      title: 'asasasa',
+      image: 'https://picsum.photos/220/106',
+    },
   ],
 ];
 
@@ -48,32 +129,27 @@ const BreakDownList = ({ item }: { item: Fund }) => {
   );
 
   // @ts-ignore
-  const renderItem = ({ item, index }) => {
+  const renderItem = ({ item }) => {
     return (
       <S.Box>
-        {/* {item.icon}
-        <Typography fontSize={12} bold style={{ marginVertical: 10 }}>
-          {item.name}
-        </Typography> */}
+        <S.ImageView
+          source={{ uri: `${item.image}?random=${item.id}` }}
+          resizeMode="cover"
+        />
 
-        {/* {item.image} */}
-
-        <S.Row justify="space-between" align="center">
-          <Typography fontSize={14} style={{ marginTop: 7 }}>
-            {item.id} - {item.company}
-          </Typography>
-
-          <S.Row align="center">
-            <Typography
-              fontSize={12}
-              bold
-              danger={!item.positive}
-              secondary={item.positive}
-            >
-              {item.title}
+        <S.ContentBox>
+          <S.Column>
+            <Typography fontSize={14} style={{ marginVertical: 7 }}>
+              {item.company}
             </Typography>
-          </S.Row>
-        </S.Row>
+
+            <S.Row align="center" pb={12}>
+              <Typography fontSize={12}>{item.title}</Typography>
+            </S.Row>
+
+            <Typography fontSize={12}>Read more</Typography>
+          </S.Column>
+        </S.ContentBox>
       </S.Box>
     );
   };

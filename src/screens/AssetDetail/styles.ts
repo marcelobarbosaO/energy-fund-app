@@ -38,11 +38,20 @@ export const Box = styled.View`
   background-color: ${({ theme }) => theme.colors.white};
   height: 280px;
   width: 220px;
-  padding: 10px;
+  overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 4px;
   flex-direction: column;
   margin-right: 15px;
+`;
+
+export const ContentBox = styled.View`
+  padding: 10px;
+`;
+
+export const ImageView = styled.Image`
+  width: 220px;
+  height: 106px;
 `;
 
 export const ButtonText = styled.TouchableOpacity<{ active: boolean }>`
