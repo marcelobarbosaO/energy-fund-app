@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dimensions } from 'react-native';
 
 import Header from './components/Header';
@@ -18,16 +17,6 @@ import {
 
 import * as S from './styles';
 
-interface Fund {
-  id: number;
-  name: string;
-  value: string;
-  percent: string;
-  positive: boolean;
-  icon: React.ReactNode;
-  image: React.ReactNode;
-}
-
 const funds: Fund[] = [
   {
     id: 1,
@@ -37,6 +26,7 @@ const funds: Fund[] = [
     positive: true,
     icon: <Wind />,
     image: <Graphic1 />,
+    sigla: 'WFND',
   },
   {
     id: 2,
@@ -46,6 +36,7 @@ const funds: Fund[] = [
     positive: false,
     icon: <Sun />,
     image: <Graphic2 />,
+    sigla: 'SFND',
   },
   {
     id: 3,
@@ -55,6 +46,7 @@ const funds: Fund[] = [
     positive: true,
     icon: <Nature />,
     image: <Graphic3 />,
+    sigla: 'NFND',
   },
 ];
 
