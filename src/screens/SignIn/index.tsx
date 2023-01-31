@@ -1,11 +1,15 @@
 import React from 'react';
+import Toast from 'react-native-toast-message';
 import { TextInput } from 'react-native-paper';
 
+import useUserStore from '#hooks/useStore';
 import { Header, Button, Input, Typography } from '#components';
 
 import * as S from './styles';
 
 const SignIn = ({ navigation }: PageProps) => {
+  const { accounts, setLogged } = useUserStore((state) => state);
+
   const [email, setEmail] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
   const [visible, setVisible] = React.useState<boolean>(false);
@@ -15,7 +19,27 @@ const SignIn = ({ navigation }: PageProps) => {
   const handleSignIn = () => {
     if (disabled) return;
 
-    navigation.navigate('tabs');
+    const validAccount = accounts.some(
+      ({ email: emailAccount, password: passwordAccount }) =>
+        emailAccount === email.trim() && passwordAccount === password.trim()
+    );
+
+    if (!validAccount)
+      return Toast.show({
+        type: 'info',
+        text1: 'Warning',
+        text2: 'Account not exists or email/password wrong.',
+      });
+
+    setLogged(true);
+
+    Toast.show({
+      type: 'success',
+      text1: 'Success',
+      text2: 'Login successful',
+    });
+
+    return navigation.navigate('tabs');
   };
 
   return (
