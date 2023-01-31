@@ -1,7 +1,7 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import { Typography } from '#components';
+import Typography from '../Typography';
 
 import * as S from './styles';
 
