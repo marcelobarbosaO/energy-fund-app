@@ -12,12 +12,10 @@ interface Account {
 interface UserStore {
   user: Account | undefined;
   accounts: Account[];
-  registered: boolean;
   isLogged: boolean;
   setUser: (account: Account) => void;
   setAccounts: (account: Account) => void;
   setLogged: (status: boolean) => void;
-  setRegistered: (status: boolean) => void;
 }
 
 const useUserStore = create(
@@ -25,13 +23,11 @@ const useUserStore = create(
     (set) => ({
       user: undefined,
       accounts: [],
-      registered: false,
       isLogged: false,
       setUser: (user) => set(() => ({ user })),
       setAccounts: (account) =>
         set((state) => ({ accounts: [...state.accounts, account] })),
       setLogged: (status) => set(() => ({ isLogged: status })),
-      setRegistered: (status) => set(() => ({ registered: status })),
     }),
     {
       name: 'user',
