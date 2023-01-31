@@ -2,7 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components/native';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-import { useFonts, Sora_400Regular } from '@expo-google-fonts/sora';
+import {
+  useFonts,
+  Sora_400Regular,
+  Sora_600SemiBold,
+} from '@expo-google-fonts/sora';
 
 import Routes from './routes';
 import theme from './theme';
@@ -10,6 +14,7 @@ import theme from './theme';
 const App = () => {
   let [fontsLoaded] = useFonts({
     Sora_400Regular,
+    Sora_600SemiBold,
   });
 
   if (!fontsLoaded) return null;
