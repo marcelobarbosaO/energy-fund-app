@@ -1,21 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+import { Provider as PaperProvider } from 'react-native-paper';
 
-export default function App() {
+import { useFonts, Sora_400Regular } from '@expo-google-fonts/sora';
+
+import Routes from './routes';
+import theme from './theme';
+
+const App = () => {
+  let [fontsLoaded] = useFonts({
+    Sora_400Regular,
+  });
+
+  if (!fontsLoaded) return null;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <PaperProvider theme={theme}>
+        <StatusBar
+          style="dark"
+          translucent
+          backgroundColor={theme.colors.background}
+        />
+        <Routes />
+      </PaperProvider>
+    </ThemeProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
