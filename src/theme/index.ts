@@ -49,9 +49,11 @@ export default {
     primary: '#770FDF',
     secondary: '#0FDF8F',
     background: '#f5f5f5',
+    background_light: '#f5f5f5',
     white: '#FFFFFF',
     border: '#E6E6E6',
     labelSection: '#A0A0A0',
+    placeholder: '#CFCFCF',
     black: '#000',
   },
   // @ts-ignore
