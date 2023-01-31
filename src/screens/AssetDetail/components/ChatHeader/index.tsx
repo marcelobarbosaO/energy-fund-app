@@ -1,9 +1,9 @@
-import { Dimensions } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
 import theme from '#theme';
 import { Typography } from '#components';
 import { DiagonalArrow, DiagonalArrowDown } from '#assets/svg';
+import { ScreenWidth } from '#utils/native';
 
 import * as S from '../../styles';
 
@@ -55,7 +55,7 @@ const ChartHeader = ({ item }: { item: Fund }) => (
           },
         ],
       }}
-      width={Dimensions.get('window').width} // from react-native
+      width={ScreenWidth} // from react-native
       height={153}
       chartConfig={{
         backgroundColor: '#fff',

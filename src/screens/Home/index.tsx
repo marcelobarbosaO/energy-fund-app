@@ -1,5 +1,3 @@
-import { Dimensions } from 'react-native';
-
 import Header from './components/Header';
 
 import { Typography } from '#components';
@@ -14,6 +12,7 @@ import {
   Graphic2,
   Graphic3,
 } from '#assets/svg';
+import { ScreenWidth } from '#utils/native';
 
 import * as S from './styles';
 
@@ -50,7 +49,7 @@ const funds: Fund[] = [
   },
 ];
 
-export const SLIDER_WIDTH = Dimensions.get('window').width + 80;
+export const SLIDER_WIDTH = ScreenWidth + 80;
 
 const Home = ({ navigation }: PageProps) => {
   const goToItem = (item: Fund) => navigation.navigate('assetDetail', { item });
