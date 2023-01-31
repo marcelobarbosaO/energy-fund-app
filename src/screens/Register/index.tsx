@@ -31,7 +31,7 @@ const Register = ({ navigation }: PageProps) => {
 
     if (existAccountWithEmail())
       return Toast.show({
-        type: 'warning',
+        type: 'info',
         text1: 'Warning',
         text2: 'Account exists.',
       });
