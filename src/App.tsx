@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components/native';
 import { Provider as PaperProvider } from 'react-native-paper';
+import Toast from 'react-native-toast-message';
 
 import {
   useFonts,
@@ -28,6 +29,7 @@ const App = () => {
           backgroundColor={theme.colors.background}
         />
         <Routes />
+        <Toast />
       </PaperProvider>
     </ThemeProvider>
   );
