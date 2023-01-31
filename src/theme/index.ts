@@ -49,7 +49,7 @@ export default {
     primary: '#770FDF',
     secondary: '#0FDF8F',
     background: '#f5f5f5',
-    background_light: '#f5f5f5',
+    background_light: '#f4f4f4',
     white: '#FFFFFF',
     border: '#E6E6E6',
     labelSection: '#A0A0A0',
