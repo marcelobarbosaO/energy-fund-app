@@ -54,6 +54,7 @@ export default {
     border: '#E6E6E6',
     labelSection: '#A0A0A0',
     placeholder: '#CFCFCF',
+    danger: '#EE8688',
     black: '#000',
   },
   // @ts-ignore
