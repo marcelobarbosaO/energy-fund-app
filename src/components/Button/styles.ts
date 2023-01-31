@@ -8,7 +8,7 @@ export interface ButtonAppProps extends Omit<ButtonProps, 'theme'> {
 
 export const Button = styled(BTN)<ButtonAppProps>`
   border-radius: 4px;
-  padding: 10px 0;
+  padding: 8px 0;
 
   margin-bottom: ${({ mb }) => mb || 0}px;
   margin-top: ${({ mt }) => mt || 0}px;
