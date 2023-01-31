@@ -1,20 +1,24 @@
-import { CheckboxProps } from 'react-native-paper';
+import { Checkbox as Check, CheckboxProps } from 'react-native-paper';
 
-import Typography from '../Typography';
+import theme from '#theme';
 
 import * as S from './styles';
 
 interface Props extends CheckboxProps {
-  label?: React.ReactNode | string;
-  checked?: boolean;
+  label?: React.ReactNode;
   onChange?: () => void;
 }
 
-const Checkbox = ({ label, checked = false, onChange, ...rest }: Props) => {
+const Checkbox = ({ label, onChange, ...rest }: Props) => {
   return (
     <S.Container>
-      <Checkbox onPress={onChange} {...rest} />
-      {label && <Typography>{label}</Typography>}
+      <Check
+        onPress={onChange}
+        {...rest}
+        uncheckedColor={theme.colors.border}
+      />
+
+      {label ? label : null}
     </S.Container>
   );
 };
