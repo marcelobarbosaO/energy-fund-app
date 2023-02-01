@@ -16,4 +16,5 @@ export const Form = styled.View`
 
 export const ButtonText = styled.TouchableOpacity`
   align-items: center;
+  padding: 10px;
 `;

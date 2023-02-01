@@ -79,7 +79,7 @@ const SignIn = ({ navigation }: PageProps) => {
           <Button
             mode="contained"
             mt={17}
-            mb={13}
+            mb={3}
             onPress={handleSignIn}
             disabled={disabled}
           >
