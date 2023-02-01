@@ -10,26 +10,25 @@ import * as S from './styles';
 const Register = ({ navigation }: PageProps) => {
   const { setAccounts, accounts } = useUserStore((state) => state);
 
-  const [name, setName] = React.useState<string>('');
-  const [lastName, setLastName] = React.useState<string>('');
-  const [email, setEmail] = React.useState<string>('');
-  const [password, setPassword] = React.useState<string>('');
+  const [name, setName] = React.useState<string>('teste');
+  const [lastName, setLastName] = React.useState<string>('teste');
+  const [email, setEmail] = React.useState<string>('teste@teste.com');
+  const [password, setPassword] = React.useState<string>('123456');
   const [terms, setTerms] = React.useState<boolean>(false);
   const [visible, setVisible] = React.useState<boolean>(false);
 
   const disabled = !name || !lastName || !email || !password || !terms;
 
-  const existAccountWithEmail = () =>
-    React.useMemo(() => {
-      if (accounts.length === 0) return false;
+  const existAccountWithEmail = React.useMemo(() => {
+    if (accounts.length === 0) return false;
 
-      return accounts.some((account) => account.email.trim() === email.trim());
-    }, [accounts]);
+    return accounts.some((account) => account.email.trim() === email.trim());
+  }, [accounts]);
 
   const handleRegister = () => {
     if (disabled) return;
 
-    if (existAccountWithEmail())
+    if (existAccountWithEmail)
       return Toast.show({
         type: 'info',
         text1: 'Warning',
