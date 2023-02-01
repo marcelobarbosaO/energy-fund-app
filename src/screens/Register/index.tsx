@@ -54,7 +54,7 @@ const Register = ({ navigation }: PageProps) => {
 
   return (
     <S.Container>
-      <Header canBack title="Wind Fund" />
+      <Header canBack />
 
       <S.Content>
         <Typography centerAlign fontSize={18} bold>
@@ -104,10 +104,26 @@ const Register = ({ navigation }: PageProps) => {
             status={terms ? 'checked' : 'unchecked'}
             onChange={() => setTerms((prev) => !prev)}
             label={
-              <Typography style={{ flex: 1 }} grey fontSize={12}>
+              <Typography
+                style={{ flex: 1, position: 'relative' }}
+                grey
+                fontSize={12}
+              >
                 I am over 18 years of age and I have read and agree to the{' '}
-                <Typography fontSize={12}>Terms of Service</Typography> and{' '}
-                <Typography fontSize={12}>Privacy policy</Typography>.
+                <Typography
+                  onPress={() => navigation.navigate('terms')}
+                  fontSize={12}
+                >
+                  Terms of Service
+                </Typography>{' '}
+                and{' '}
+                <Typography
+                  onPress={() => navigation.navigate('privacity')}
+                  fontSize={12}
+                >
+                  Privacy policy
+                </Typography>
+                .
               </Typography>
             }
           />

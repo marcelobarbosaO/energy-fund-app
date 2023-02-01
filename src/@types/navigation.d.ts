@@ -4,6 +4,8 @@ declare type AppStackNavigatorParamList = {
   splash: undefined;
   signin: undefined;
   register: undefined;
+  terms: undefined;
+  privacity: undefined;
   assetDetail: {
     item: Fund;
   };

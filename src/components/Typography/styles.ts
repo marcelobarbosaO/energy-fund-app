@@ -50,3 +50,12 @@ export const Typography = styled(Text)<TypographyProps>`
       `;
   }};
 `;
+
+export const ButtonText = styled.TouchableHighlight`
+  background: #f00;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  height: 5px;
+  overflow: hidden;
+`;
