@@ -10,10 +10,10 @@ import * as S from './styles';
 const Register = ({ navigation }: PageProps) => {
   const { setAccounts, accounts } = useUserStore((state) => state);
 
-  const [name, setName] = React.useState<string>('teste');
-  const [lastName, setLastName] = React.useState<string>('teste');
-  const [email, setEmail] = React.useState<string>('teste@teste.com');
-  const [password, setPassword] = React.useState<string>('123456');
+  const [name, setName] = React.useState<string>('');
+  const [lastName, setLastName] = React.useState<string>('');
+  const [email, setEmail] = React.useState<string>('');
+  const [password, setPassword] = React.useState<string>('');
   const [terms, setTerms] = React.useState<boolean>(false);
   const [visible, setVisible] = React.useState<boolean>(false);
 
