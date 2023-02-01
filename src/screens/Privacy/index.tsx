@@ -2,10 +2,10 @@ import { Typography, Header } from '#components';
 
 import * as S from './styles';
 
-const Privacity = () => {
+const Privacy = () => {
   return (
     <S.Container>
-      <Header title="Privacity" canBack />
+      <Header title="Privacy Policy" canBack />
 
       <S.Content>
         <Typography>
@@ -24,4 +24,4 @@ const Privacity = () => {
   );
 };
 
-export default Privacity;
+export default Privacy;

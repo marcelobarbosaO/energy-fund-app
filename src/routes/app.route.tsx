@@ -10,7 +10,7 @@ import Register from '#screens/Register';
 import AssetDetail from '#screens/AssetDetail';
 
 import Terms from '#screens/Terms';
-import Privacity from '#screens/Privacity';
+import Privacy from '#screens/Privacy';
 
 const { Navigator, Screen } =
   createNativeStackNavigator<AppStackNavigatorParamList>();
@@ -22,7 +22,7 @@ const AppRoutes = () => {
       <Screen name="tabs" component={BottomTab} />
       <Screen name="assetDetail" component={AssetDetail} />
       <Screen name="terms" component={Terms} />
-      <Screen name="privacity" component={Privacity} />
+      <Screen name="privacy" component={Privacy} />
       <Screen name="signin" component={SignIn} />
       <Screen name="register" component={Register} />
     </Navigator>

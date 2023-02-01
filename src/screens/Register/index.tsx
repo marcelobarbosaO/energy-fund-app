@@ -118,7 +118,7 @@ const Register = ({ navigation }: PageProps) => {
                 </Typography>{' '}
                 and{' '}
                 <Typography
-                  onPress={() => navigation.navigate('privacity')}
+                  onPress={() => navigation.navigate('privacy')}
                   fontSize={12}
                 >
                   Privacy policy

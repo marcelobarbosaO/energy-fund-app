@@ -5,7 +5,7 @@ declare type AppStackNavigatorParamList = {
   signin: undefined;
   register: undefined;
   terms: undefined;
-  privacity: undefined;
+  privacy: undefined;
   assetDetail: {
     item: Fund;
   };
